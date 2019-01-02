@@ -1,5 +1,5 @@
 ## Advanced Lane Finding
-[![Udacity - Self-Driving Car NanoDegree](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/55679/1545905629/1.png)](http://www.udacity.com/drive)
+
 
 
 Meets Specifications
