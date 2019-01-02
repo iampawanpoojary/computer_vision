@@ -1,39 +1,76 @@
 ## Advanced Lane Finding
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+[![Udacity - Self-Driving Car NanoDegree](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/55679/1545905629/1.png)](http://www.udacity.com/drive)
 
 
-In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
+Meets Specifications
+Keen student,
+Congratulations, you finally made it!
+I can see you did read the suggestions and comments from the previous review and followed the required guidelines to adjust your work carefully. The work was attractive due to the great ideas implemented and the presentation of the write-up too was cool.:star:
 
-Creating a great writeup:
----
-A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
+On a personal note, I honestly must say this is quite a good implementation of the Advanced Lane finding project and we urge you to continue with this great desire for excellence as you study with us here at :udacious:dacity.:trophy:
 
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
+Extra Material
+Check out the following for more information on the subject matter.
 
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
+Real-time Vision-Based Lane Detection with 1D Haar Wavelet Transform on Raspberry Pi
+Lane Detection Techniques: A Review which describes a similar approach.
+Lane Detection based on Contrast Analysis
+Robust lane finding using advanced computer vision techniques: Mid project update
+Writeup / README
+The writeup / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled.
 
-The Project
----
+The write-up includes explanations of the methods used and has supporting images to demonstrate how every rubric point was addressed. Great job!.
 
-The goals / steps of this project are the following:
+Camera Calibration
+OpenCV functions or other methods were used to calculate the correct camera matrix and distortion coefficients using the calibration chessboard images provided in the repository (note these are 9x6 chessboard images, unlike the 8x6 images used in the lesson). The distortion matrix should be used to un-distort one of the calibration images provided as a demonstration that the calibration is correct. Example of undistorted calibration image is Included in the writeup (or saved to a folder).
 
-* Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
-* Apply a distortion correction to raw images.
-* Use color transforms, gradients, etc., to create a thresholded binary image.
-* Apply a perspective transform to rectify binary image ("birds-eye view").
-* Detect lane pixels and fit to find the lane boundary.
-* Determine the curvature of the lane and vehicle position with respect to center.
-* Warp the detected lane boundaries back onto the original image.
-* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
+Well done! You correctly used OpenCV functions like findChessboardCorners and calibrateCamera to calculate the correct camera matrix and distortion coefficients using the calibration chessboard images provided in the repository. And as shown below, the undistorted image is almost the same as the real one!
 
-The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing your pipeline on single frames.  If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.  
+[![chessboard](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/55679/1545905629/1.png)]
 
-To help the reviewer examine your work, please save examples of the output from each stage of your pipeline in the folder called `output_images`, and include a description in your writeup for the project of what each image shows.    The video called `project_video.mp4` is the video your pipeline should work well on.  
+Pipeline (test images)
+Distortion correction that was calculated via camera calibration has been correctly applied to each image. An example of a distortion corrected image should be included in the writeup (or saved to a folder) and submitted with the project.
 
-The `challenge_video.mp4` video is an extra (and optional) challenge for you if you want to test your pipeline under somewhat trickier conditions.  The `harder_challenge.mp4` video is another optional challenge and is brutal!
+Great job applying the calculated distortion correction to the test images and also displaying the results.
 
-If you're feeling ambitious (again, totally optional though), don't stop there!  We encourage you to go out and take video of your own, calibrate your camera and show us how you would implement this project from scratch!
+Suggestions and Comments
+To gain more knowledge about distortion correction and camera calibration, please refer to the links below:
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+Geometric Image Transformations
+Camera Calibration
+Calibrate fisheye lens using OpenCV — part 1
+Python cv2.undistort() Examples
+
+[![road](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/55679/1545905646/2.png)]
+
+A method or combination of methods (i.e., color transforms, gradients) has been used to create a binary image containing likely lane pixels. There is no "ground truth" here, just visual verification that the pixels identified as part of the lane lines are, in fact, part of the lines. Example binary images should be included in the writeup (or saved to a folder) and submitted with the project.
+
+OpenCV function or other method has been used to correctly rectify each image to a "birds-eye view". Transformed images should be included in the writeup (or saved to a folder) and submitted with the project.
+
+Methods have been used to identify lane line pixels in the rectified binary image. The left and right line have been identified and fit with a curved functional form (e.g., spine or polynomial). Example images with line pixels identified and a fit overplotted should be included in the writeup (or saved to a folder) and submitted with the project.
+
+Here the idea is to take the measurements of where the lane lines are and estimate how much the road is curving and where the vehicle is located with respect to the center of the lane. The radius of curvature may be given in meters assuming the curve of the road follows a circle. For the position of the vehicle, you may assume the camera is mounted at the center of the car and the deviation of the midpoint of the lane from the center of the image is the offset you're looking for. As with the polynomial fitting, convert from pixels to meters.
+
+The fit from the rectified image has been warped back onto the original image and plotted to identify the lane boundaries. This should demonstrate that the lane boundaries were correctly identified. An example image with lanes, curvature, and position from center should be included in the writeup (or saved to a folder) and submitted with the project.
+
+Good implementation and drawing of area to identify lane and following lane curvature.
+
+Thank you for the updates to the work:thumbsup:
+Pipeline (video)
+The image processing pipeline that was established to find the lane lines in images successfully processes the video. The output here should be a new video where the lanes are identified in every frame, and outputs are generated regarding the radius of curvature of the lane and vehicle position within the lane. The pipeline should correctly map out curved lines and not fail when shadows or pavement color changes are present. The output video should be linked to in the writeup and/or saved and submitted with the project.
+
+Excellent video output, result_project_video_2.mp4! The pipeline successfully identified the lane pixels in all frames of the project video and did not fail where shadows existed. This is commendable work and shows how much time and commitment was put into this project. Keep it up!:star:
+
+[![road](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/55679/1545905832/1.png)]
+
+Discussion
+Discussion includes some consideration of problems/issues faced, what could be improved about their algorithm/pipeline, and what hypothetical cases would cause their pipeline to fail.
+
+Great discussion here. You have correctly identified problems your pipeline can face and where it may fail.
+
+Extra Material
+One can try using deep learning techniques as alternative to Computer vision techniques used in the current implementation
+Check out this link on Experiment Using Deep Learning to find Road Lane Lines to get a feel of what deep learning techniques can bring to lane finding.
+One can use this awesome nvidia's end-to-end deep learning for Self driving cars.
+For more math and theory about deep learning technique, follow this article from ford's engineers.
 
