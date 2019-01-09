@@ -1,6 +1,8 @@
 ## Advanced Lane Finding
 
+## Python code in in file p2.ipynb and output video is on result_project_video_2.mp4 file in the master directory
 
+## Note: This repository is a part of my computer vision & deep learning nanodegree , the writeup and review for my code exists in file writeup.pdf in the master directory.
 
 Meets Specifications
 Keen student,
